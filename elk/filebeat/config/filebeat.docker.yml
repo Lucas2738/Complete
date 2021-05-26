@@ -1,0 +1,35 @@
+filebeat.prospectors:
+- type: log
+  paths:
+    - "/var/lib/docker/containers/demo/*-json.log"
+
+#filebeat.autodiscover:
+#  providers:
+#    - type: docker
+#      labels.dedot: true
+#      templates:
+#        - condition:
+#            contains:
+#              container.labels.collect_logs_with_filebeat: "true"
+#          config:
+#            - type: container
+#              format: docker
+#              paths:
+#                - "/var/lib/docker/containers/demo/*.log"
+#              processors:
+#                - decode_json_fields:
+#                    when.equals:
+#                      docker.container.labels.decode_log_event_to_json_object: "true"
+#                    fields: ["message"]
+#                    target: ""
+#                    overwrite_keys: true
+
+output.logstash:
+  hosts: "logstash:5044"
+
+logging:
+  to_files: true
+  files:
+    path: /var/log/filebeat
+    name: mybeat
+    rotateeverybytes: 10485760 # = 10MB

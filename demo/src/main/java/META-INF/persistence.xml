@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+	<persistence-unit name="facade">
+		<class>com.example.demo.repository.primary.entities.TblEmployee</class>
+		<class>com.example.demo.repository.primary.entities.TblRole</class>
+		<class>com.example.demo.repository.primary.entities.TblCompany</class>
+		<class>com.example.demo.repository.primary.entities.TblCountry</class>
+		<class>com.example.demo.rxentities.CompanyFile</class>
+		<class>com.example.demo.repository.primary.entities.ProductMultiCarTable</class>
+		<class>com.example.demo.repository.primary.entities.ProductMultiMotorcycleTable</class>
+		<class>com.example.demo.repository.primary.entities.ProductMultiParentTable</class>
+		<class>com.example.demo.repository.primary.entities.ProductMultiPcTable</class>
+		<class>com.example.demo.repository.primary.entities.ProductSingleTable</class>
+		<class>com.example.demo.repository.primary.entities.mappedsuperclass.ProductMscCarTable</class>
+		<class>com.example.demo.repository.primary.entities.mappedsuperclass.ProductMscMotorcycleTable</class>
+		<class>com.example.demo.repository.primary.entities.mappedsuperclass.ProductMscPcTable</class>
+		<class>com.example.demo.repository.primary.entities.singletable.ProductSingleTable</class>
+		<class>com.example.demo.repository.primary.entities.joinedtable.ProductJtCarTable</class>
+		<class>com.example.demo.repository.primary.entities.joinedtable.ProductJtMotorcycleTable</class>
+		<class>com.example.demo.repository.primary.entities.joinedtable.ProductJtTable</class>
+		<class>com.example.demo.repository.primary.entities.joinedtable.ProductJtPcTable</class>
+	</persistence-unit>
+</persistence>

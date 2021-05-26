@@ -1,0 +1,15 @@
+package com.example.demo.model;
+
+import lombok.*;
+
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class SecretDocumentResponse {
+    private String name;
+    private String surname;
+    private String email;
+    private String role;
+}

@@ -1,0 +1,25 @@
+version: "3"
+services:
+
+  mysql-server:
+    image: mysql/mysql-server:latest
+    deploy:
+      replicas: 1
+    restart: always
+    ports:
+      - "3307:3306"
+    volumes:
+      - "./scripts/schema.sql:/docker-entrypoint-initdb.d/schema.sql"
+    networks:
+      demo-net:
+        aliases:
+         - mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=demo  
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=admin
+
+networks:
+  demo-net:
+    driver: overlay

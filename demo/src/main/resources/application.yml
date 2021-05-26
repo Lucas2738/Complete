@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: demo-ms
+  rsocket:
+    server:
+      port: 7000
+  batch:
+    initialize-schema: ALWAYS
+  datasource:
+    initialization-mode: always
+    jdbcUrl: ${MYSQL_SERVER_ADDRESS}
+    password: admin
+    platform: mysql
+    username: root
+  r2dbc:
+    database: rxdemo
+    host: ${POSTGRESSQL_SERVICE}
+    initialization-mode: always
+    password: admin
+    port: 5432
+    url: ${POSTGRESSQL_SERVER_ADDRESS}
+    username: root
+
+server:
+  port: 8080
+
+file:
+  input: coffee-list.csv
+hibernate:
+  dialect: org.hibernate.dialect.H2Dialect
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+cert:
+  mine:
+    certPath: /app/config/cert/demo_keystore.p12
+    alias: "demoKeyPair"
+    pwd: "demopwd"
+  democlient:
+    certPath: /app/config/cert/demo_client_cert_keystore.p12
+    alias: "demoClientCertKeyPair"
+    pwd: "demopwd"
+
+kafka:
+  bootstrapAddress: kafka:9093

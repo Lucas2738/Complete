@@ -1,0 +1,26 @@
+version: "3"
+services:
+
+  postgressql-server:
+    image: postgres:latest
+    deploy:
+      replicas: 1
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "5732:5432"
+    volumes:
+      - "./scripts/file/:/file"
+      - "./scripts/rxschema.sql:/docker-entrypoint-initdb.d/schema.sql"
+    networks:
+      demo-net:
+        aliases:
+         - postgressql
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=rxdemo
+      
+networks:
+  demo-net:
+    driver: overlay

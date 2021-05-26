@@ -1,0 +1,27 @@
+version: "3"
+services:
+  demo-client:
+    image: lucas2738/demo-client:0.0.1-SNAPSHOT
+    volumes:
+      - "../logs/demo-client/:/logs"
+      - "./src/main/resources:/app/config"
+      - "/home/Downloads/:/home/Downloads"
+    deploy:
+      replicas: 1
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "8781:8781"
+    networks:
+      - demo-net
+    environment:
+      - DEMO_WEB_ADDRESS=http://demo-ms:8080
+      - DEMO_WEB_HOST=demo-ms
+      - DEMO_WEB_PORT=8080
+      - FILE_DEST_FOLDER=/home/Downloads
+    depends_on:
+      - demo
+      
+networks:
+  demo-net:
+    driver: overlay
