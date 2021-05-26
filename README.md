@@ -1,55 +1,55 @@
-build with maven projects images
-in project demo:
+#build with maven projects images
+in home folder:
 	- launch "docker-compose up" for single docker instance
 	- launch "docker stack deploy --compose-file docker-compose.yml STACK" for Docker Swarm cluster
 
 Docker Swarm
 
-#Init the swarm
+# Init the swarm
 docker swarm init --advertise-addr 192.168.1.124
 
 
-#retrieve the join command for node worker
+# retrieve the join command for node worker
 docker swarm join-token worker
 
-#the result will be similar to
+# the result will be similar to
 docker swarm join --token SWMTKN-1-2xvspgo7ogomak3arfu5inewttqaypdfrw79w6h7v4h9kjyja1-5ny97psfkg0erqst95uv070vg 192.168.1.124:2377
 
-#start portainer
+# start portainer
 docker stack deploy -c portainer-agent-stack.yml portainer
 
-#or start portainer in this way
+# or start portainer in this way
 sudo docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer
 
 
-#run stack from docker-compose
+# run stack from docker-compose
 sudo docker stack deploy --compose-file docker-compose.yml STACK
 
-#remove all stack
+# remove all stack
 sudo docker stack rm STACK
 
-#create folder with following files for launch scripts for DBs initialization in any worker node because docker compose will search scripts in these path:
+# create folder with following files for launch scripts for DBs initialization in any worker node because docker compose will search scripts in these path:
 	/home/luca/Public/Dev/Projects/demo/scripts/schema.sql
 	/home/luca/Public/Dev/Projects/demo/scripts/rxschema.sql
 	
-#create folder /home/luca/Public/Dev/Projects/logs/demo because demo app in docker compose mount a volume for logging in this path
+# create folder /home/luca/Public/Dev/Projects/logs/demo because demo app in docker compose mount a volume for logging in this path
 
 
-#see containers
+# see containers
 sudo docker ps
 
-#exe bash inside container and navigate container file system
+# exe bash inside container and navigate container file system
 docker exec -it 7a99aabc0135 /bin/sh
 
-#extends memory for elasticsearch container
+# extends memory for elasticsearch container
 sudo sysctl -w vm.max_map_count=262144
 
-#reload imager and restart container into stack named STACK
+# reload imager and restart container into stack named STACK
 ./docker-master-build.sh <PRJ_FOLDER_NAME>
 
 ex. ./docker-master-build.sh demo
 
-#run portainer container
+# run portainer container
 docker run -d -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock portainer/portainer
 
 
@@ -86,7 +86,7 @@ The following instruction has been executed in order to generate certificate usi
   -keystore demo_client_cert_keystore.p12 -file \
   demo_client_certificate.cer -rfc -storepass demopwd
 
-#Kafka
+# Kafka
   when starting Kafka delete the content of folder /kafka/k1-logs/ (the volume is comment in docker-compose.yml)
 
   if starting demo and demo-client in IDE change this line
