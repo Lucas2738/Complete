@@ -1,7 +1,8 @@
-#build with maven projects images
+# Build with maven projects images
 in home folder:
 	- launch "docker-compose up" for single docker instance
 	- launch "docker stack deploy --compose-file docker-compose.yml STACK" for Docker Swarm cluster
+	- run ./docker-master-build.sh for Docker Swarm Cluster
 
 Docker Swarm
 
