@@ -1,0 +1,204 @@
+version: "3.2"
+services:
+  demo-client:
+    image: lucas2738/demo-client:0.0.1-SNAPSHOT
+    volumes:
+      - "./logs/demo-client/:/logs"
+      - "./demo-client/src/main/resources:/app/config"
+      - "/home/Downloads/:/home/Downloads"
+    deploy:
+      replicas: 1
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "8781:8781"
+    networks:
+      - demo-net
+    environment:
+      - DEMO_WEB_ADDRESS=http://demo-ms:8080
+      - DEMO_WEB_HOST=demo-ms
+      - DEMO_WEB_PORT=8080
+      - FILE_DEST_FOLDER=/home/Downloads
+    depends_on:
+      - demo
+
+  
+  demo:
+    image: lucas2738/demo:0.0.2-SNAPSHOT
+    volumes:
+      - "./logs/demo/:/logs"
+      - "./demo/src/main/resources:/app/config"
+    deploy:
+      replicas: 1
+    healthcheck:
+      test: curl -f http://127.0.0.1:8080/actuator/health || exit 1
+      interval: "60s"
+      timeout: "10s"
+      retries: 10
+    ports:
+      - "8081:8080"
+    networks:
+      demo-net:
+        aliases:
+         - demo-ms
+    labels:
+      collect_logs_with_filebeat: "true"
+      decode_log_event_to_json_object: "true"
+    environment:
+      - MYSQL_SERVER_ADDRESS=jdbc:mysql://mysql:3306/demo
+      - POSTGRESSQL_SERVER_ADDRESS=r2dbc:postgresql://postgressql:5432/demo
+      - POSTGRESSQL_SERVICE=postgressql
+    depends_on:
+      - mysql-server
+      - postgressql-server
+      - filebeat
+        
+
+  mysql-server:
+    image: mysql/mysql-server:latest
+    deploy:
+      replicas: 1
+    restart: always
+    ports:
+      - "3307:3306"
+    volumes:
+      - "./mysql/scripts/schema.sql:/docker-entrypoint-initdb.d/schema.sql"
+    networks:
+      demo-net:
+        aliases:
+         - mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=admin
+      - MYSQL_DATABASE=demo  
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=admin
+
+  postgressql-server:
+    image: postgres:latest
+    deploy:
+      replicas: 1
+    healthcheck:
+      test: "exit 0"
+    ports:
+      - "5732:5432"
+    volumes:
+      - "./postgresql/scripts/file/:/file"
+      - "./postgresql/scripts/rxschema.sql:/docker-entrypoint-initdb.d/schema.sql"
+    networks:
+      demo-net:
+        aliases:
+         - postgressql
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=rxdemo
+      
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.2.2
+    build: ./elk/elasticsearch/
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      ES_JAVA_OPTS: "-Xms1g -Xmx1g"
+    networks:
+      demo-net:
+      
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.2.2
+    build: ./elk/logstash/
+    command: -f /etc/logstash/conf.d/
+    volumes:
+      - ./elk/logstash/config:/etc/logstash/conf.d
+    ports:
+      - "9999:9999"
+      - "5044:5044"
+    networks:
+      demo-net:
+    depends_on:
+      - elasticsearch
+
+  filebeat:
+    image: docker.elastic.co/beats/filebeat:6.2.2
+    build: ./elk/filebeat/
+    volumes:
+      - ./elk/filebeat/config/filebeat.docker.yml:/usr/share/filebeat/filebeat.yml:ro # Configuration file
+      - ./logs/:/var/lib/docker/containers:ro           # Docker logs
+      - /var/run/docker.sock:/var/run/docker.sock:ro                       # Additional information about containers
+      - ./elk/filebeat/data:/usr/share/filebeat/data:rw                    # Persistence data
+    user: root                                                             # Allow access to log files and docker.sock
+    command: -e --strict.perms=false
+    restart: on-failure
+    networks:
+      demo-net:
+    depends_on:
+      - logstash
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.2.2
+    build: ./elk/kibana/
+    volumes:
+      - ./elk/kibana/config/:/opt/kibana/config/
+    ports:
+      - "5601:5601"
+    networks:
+      demo-net:
+    depends_on:
+      - elasticsearch
+      
+
+  zookeeper:
+    image: zookeeper:latest
+    ports:
+      - "2181:2181"
+    deploy:
+      replicas: 1
+
+    networks:
+      demo-net:
+
+  kafka:
+    image: wurstmeister/kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - target: 9093
+        published: 9093
+        protocol: tcp
+        mode: global
+    deploy:
+      replicas: 1
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9092,OUTSIDE://kafka:9093
+      #uncomment this line and comment the above one for launch demo and demo-client in debug. kafdrop will not work  
+      #KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9092,OUTSIDE://localhost:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_LISTENERS: INSIDE://:9092,OUTSIDE://:9093
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_LOG_DIRS: /kafka/kafka-logs
+      KAFKA_CREATE_TOPICS: "test:1:1,compact"
+    #volumes:
+    #  - ./kafka/k1-logs:/kafka/kafka-logs
+    networks:
+      demo-net:
+      
+  kafdrop:
+    image: obsidiandynamics/kafdrop
+    depends_on:
+      - zookeeper
+    ports:
+       - "9094:9000"
+    deploy:
+      replicas: 1
+    environment:
+      KAFKA_BROKERCONNECT: kafka:9093
+      JVM_OPTS: "-Xms32M -Xmx64M"
+      SERVER_SERVLET_CONTEXTPATH: "/"
+    networks:
+      demo-net:
+
+networks:
+  demo-net:
+    driver: overlay

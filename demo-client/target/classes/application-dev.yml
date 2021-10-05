@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: demo-client
+server:
+  port: 8781
+microservice:
+  demo:
+    address: http://127.0.0.1:8081
+    host: 127.0.0.1
+    port: 8081
+cert:
+  mine:
+    certPath: ${resources_path}/cert/demo_client_keystore.p12
+    alias: "demoClientKeyPair"
+    pwd: "democlientpwd"
+  demo:
+    certPath: ${resources_path}/cert/demo_cert_keystore.p12
+    alias: "demoCertKeyPair"
+    pwd: "democlientpwd"
+
+kafka:
+  bootstrapAddress: 127.0.0.1:9093

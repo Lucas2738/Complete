@@ -1,0 +1,15 @@
+it/sisal/json/deserialize/JsonDeserializable.class
+it/sisal/json/serialize/Serialize.class
+it/sisal/json/serialize/JsonSerializable.class
+it/sisal/json/deserialize/Deserialize.class
+it/sisal/json/deserialize/TimeFormat.class
+it/sisal/json/deserialize/SisalDeserializer.class
+it/sisal/json/deserialize/Deserialize$3.class
+it/sisal/json/serialize/Serialize$1.class
+HelpMojo.class
+it/sisal/AbstractJson.class
+it/sisal/exceptions/ParsingException.class
+it/sisal/json/deserialize/Deserialize$1.class
+it/sisal/json/deserialize/JsonTimeType.class
+it/sisal/json/serialize/SisalSerializer.class
+it/sisal/json/deserialize/Deserialize$2.class

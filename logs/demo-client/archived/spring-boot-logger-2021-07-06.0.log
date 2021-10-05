@@ -1,0 +1,153 @@
+"site"=demo-client | 2021-07-06 07:03:47,109 INFO org.springframework.boot.StartupInfoLogger [main] Starting DemoClientApplication v0.0.1-SNAPSHOT using Java 1.8.0_212 on 225393b26b68 with PID 1 (/app.jar started by root in /)
+"site"=demo-client | 2021-07-06 07:03:47,183 DEBUG org.springframework.boot.StartupInfoLogger [main] Running with Spring Boot v2.4.5, Spring v5.3.6
+"site"=demo-client | 2021-07-06 07:03:47,184 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to default profiles: default
+"site"=demo-client | 2021-07-06 07:03:56,965 INFO org.springframework.cloud.context.scope.GenericScope [main] BeanFactory id=7432ad3f-5fa0-39bd-bc43-b1e2e8df35f5
+"site"=demo-client | 2021-07-06 07:04:00,255 INFO org.springframework.context.support.PostProcessorRegistrationDelegate$BeanPostProcessorChecker [main] Bean 'com.example.demo.client.FeignDemoClient' of type [org.springframework.cloud.openfeign.FeignClientFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+"site"=demo-client | 2021-07-06 07:04:04,617 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8781 (http)
+"site"=demo-client | 2021-07-06 07:04:04,736 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8781"]
+"site"=demo-client | 2021-07-06 07:04:04,962 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+"site"=demo-client | 2021-07-06 07:04:04,962 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+"site"=demo-client | 2021-07-06 07:04:07,646 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+"site"=demo-client | 2021-07-06 07:04:07,657 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 19044 ms
+"site"=demo-client | 2021-07-06 07:04:31,476 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [main] Initializing ExecutorService 'applicationTaskExecutor'
+"site"=demo-client | 2021-07-06 07:04:35,985 INFO org.springframework.cloud.commons.util.InetUtils [main] Cannot determine local hostname
+"site"=demo-client | 2021-07-06 07:04:37,065 INFO org.springframework.cloud.commons.util.InetUtils [main] Cannot determine local hostname
+"site"=demo-client | 2021-07-06 07:04:38,427 INFO org.apache.kafka.common.config.AbstractConfig [main] AdminClientConfig values: 
+	bootstrap.servers = [kafka:9094]
+	client.dns.lookup = use_all_dns_ips
+	client.id = 
+	connections.max.idle.ms = 300000
+	default.api.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+
+"site"=demo-client | 2021-07-06 07:04:43,586 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka version: 2.6.0
+"site"=demo-client | 2021-07-06 07:04:43,603 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka commitId: 62abe01bee039651
+"site"=demo-client | 2021-07-06 07:04:43,604 INFO org.apache.kafka.common.utils.AppInfoParser$AppInfo [main] Kafka startTimeMs: 1625555083533
+"site"=demo-client | 2021-07-06 07:04:45,031 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:45,137 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:45,240 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:45,444 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:45,847 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:46,752 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:47,756 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:48,671 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:49,588 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:50,694 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:51,799 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:52,904 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:54,110 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:55,215 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:56,420 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:57,424 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:58,630 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:04:59,634 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:00,639 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:01,746 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:02,951 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:03,855 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:04,754 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:05,960 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:06,965 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:08,073 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:09,280 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:10,385 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:11,490 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:12,497 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:13,502 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:13,645 INFO org.apache.kafka.clients.admin.internals.AdminMetadataManager [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Call(callName=fetchMetadata, deadlineMs=1625555113642, tries=1, nextAllowedTryMs=1625555113743) timed out at 1625555113643 after 1 attempt(s)
+Caused by: org.apache.kafka.common.errors.TimeoutException: Timed out waiting for a node assignment.
+"site"=demo-client | 2021-07-06 07:05:13,894 ERROR org.springframework.core.log.LogAccessor [main] Could not configure topics
+org.springframework.kafka.KafkaException: Timed out waiting to get existing topics; nested exception is java.util.concurrent.TimeoutException
+	at org.springframework.kafka.core.KafkaAdmin.lambda$checkPartitions$4(KafkaAdmin.java:254)
+	at java.util.HashMap.forEach(HashMap.java:1289)
+	at org.springframework.kafka.core.KafkaAdmin.checkPartitions(KafkaAdmin.java:233)
+	at org.springframework.kafka.core.KafkaAdmin.addTopicsIfNeeded(KafkaAdmin.java:219)
+	at org.springframework.kafka.core.KafkaAdmin.initialize(KafkaAdmin.java:189)
+	at org.springframework.kafka.core.KafkaAdmin.afterSingletonsInstantiated(KafkaAdmin.java:157)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:963)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:918)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:144)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:782)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:774)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:339)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1340)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1329)
+	at com.example.demo.DemoClientApplication.main(DemoClientApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:49)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:108)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:58)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:88)
+Caused by: java.util.concurrent.TimeoutException: null
+	at org.apache.kafka.common.internals.KafkaFutureImpl$SingleWaiter.await(KafkaFutureImpl.java:108)
+	at org.apache.kafka.common.internals.KafkaFutureImpl.get(KafkaFutureImpl.java:272)
+	at org.springframework.kafka.core.KafkaAdmin.lambda$checkPartitions$4(KafkaAdmin.java:236)
+	... 24 common frames omitted
+"site"=demo-client | 2021-07-06 07:05:14,599 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:15,842 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:16,747 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:17,955 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:19,061 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:20,068 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:21,221 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:22,127 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:23,334 WARN org.apache.kafka.clients.NetworkClient [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Connection to node -1 (kafka/10.0.1.23:9094) could not be established. Broker may not be available.
+"site"=demo-client | 2021-07-06 07:05:23,896 INFO org.apache.kafka.clients.admin.KafkaAdminClient$AdminClientRunnable [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Forcing a hard I/O thread shutdown. Requests in progress will be aborted.
+"site"=demo-client | 2021-07-06 07:05:23,902 INFO org.apache.kafka.clients.admin.internals.AdminMetadataManager [kafka-admin-client-thread | adminclient-1] [AdminClient clientId=adminclient-1] Metadata update failed
+org.apache.kafka.common.errors.TimeoutException: Call(callName=fetchMetadata, deadlineMs=1625555143643, tries=1, nextAllowedTryMs=-9223372036854775709) timed out at 9223372036854775807 after 1 attempt(s)
+Caused by: org.apache.kafka.common.errors.TimeoutException: The AdminClient thread has exited.
+"site"=demo-client | 2021-07-06 07:05:23,905 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8781"]
+"site"=demo-client | 2021-07-06 07:05:24,727 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8781 (http) with context path ''
+"site"=demo-client | 2021-07-06 07:05:25,730 INFO org.springframework.cloud.commons.util.InetUtils [main] Cannot determine local hostname
+"site"=demo-client | 2021-07-06 07:05:26,731 INFO org.springframework.cloud.commons.util.InetUtils [main] Cannot determine local hostname
+"site"=demo-client | 2021-07-06 07:05:26,787 INFO org.springframework.boot.StartupInfoLogger [main] Started DemoClientApplication in 184.39 seconds (JVM running for 189.14)
+"site"=demo-client | 2021-07-06 16:52:02,608 INFO org.springframework.scheduling.concurrent.ExecutorConfigurationSupport [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'

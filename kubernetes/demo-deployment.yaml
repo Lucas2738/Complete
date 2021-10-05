@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    collect_logs_with_filebeat: "true"
+    decode_log_event_to_json_object: "true"
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: demo
+  name: demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: demo
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        collect_logs_with_filebeat: "true"
+        decode_log_event_to_json_object: "true"
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/demo-net: "true"
+        io.kompose.service: demo
+    spec:
+      containers:
+        - env:
+            - name: MYSQL_SERVER_ADDRESS
+              value: jdbc:mysql://mysql:3306/demo
+            - name: POSTGRESSQL_SERVER_ADDRESS
+              value: r2dbc:postgresql://postgressql:5432/demo
+            - name: POSTGRESSQL_SERVICE
+              value: postgressql
+          image: lucas2738/demo:0.0.2-SNAPSHOT
+          livenessProbe:
+            exec:
+              command:
+                - curl -f http://127.0.0.1:8080/actuator/health || exit 1
+            failureThreshold: 10
+            periodSeconds: 60
+            timeoutSeconds: 10
+          name: demo
+          ports:
+            - containerPort: 8080
+          resources: {}
+          volumeMounts:
+            - mountPath: /logs
+              name: demo-claim0
+            - mountPath: /app/config
+              name: demo-claim1
+      restartPolicy: Always
+      volumes:
+        - name: demo-claim0
+          persistentVolumeClaim:
+            claimName: demo-claim0
+        - name: demo-claim1
+          persistentVolumeClaim:
+            claimName: demo-claim1
+status: {}

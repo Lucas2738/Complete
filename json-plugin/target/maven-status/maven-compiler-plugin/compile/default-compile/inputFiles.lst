@@ -1,0 +1,11 @@
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/deserialize/JsonTimeType.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/exceptions/ParsingException.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/deserialize/SisalDeserializer.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/deserialize/TimeFormat.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/deserialize/Deserialize.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/serialize/Serialize.java
+/home/lucas/Dev/Lucas/complete/json-plugin/target/generated-sources/plugin/HelpMojo.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/AbstractJson.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/deserialize/JsonDeserializable.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/serialize/JsonSerializable.java
+/home/lucas/Dev/Lucas/complete/json-plugin/src/main/java/it/sisal/json/serialize/SisalSerializer.java
