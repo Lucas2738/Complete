@@ -1,4 +1,4 @@
-package it.sisal.json.deserialize;
+package com.example.demo.json.deserialize;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

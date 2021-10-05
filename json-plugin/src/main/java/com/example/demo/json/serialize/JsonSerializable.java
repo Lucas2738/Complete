@@ -1,7 +1,7 @@
-package it.sisal.json.serialize;
+package com.example.demo.json.serialize;
 
 /** Provide a default method that will be override in all subclass of this interface that are annotate with SisalSerializer
- * @see SisalSerializer
+ * @see Serializer
  * */
 public interface JsonSerializable {
 

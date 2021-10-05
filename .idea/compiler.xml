@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="demo-client" />
+        <module name="json-plugin" />
       </profile>
       <profile name="Annotation profile for module" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -25,6 +26,7 @@
     <bytecodeTargetLevel>
       <module name="demo" target="1.8" />
       <module name="demo-client" target="1.8" />
+      <module name="json-plugin" target="1.8" />
       <module name="module" target="1.5" />
     </bytecodeTargetLevel>
   </component>

@@ -1,10 +1,7 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import it.sisal.json.deserialize.Deserialize;
-import it.sisal.json.serialize.Serialize;
-import it.sisal.model.Event;
-import it.sisal.model.Model;
+
+import com.example.demo.json.deserialize.Deserialize;
+import com.example.demo.json.serialize.Serialize;
 import org.apache.maven.plugin.testing.AbstractMojoTestCase;
-import org.jeasy.random.EasyRandom;
 
 import java.io.File;
 import java.io.IOException;

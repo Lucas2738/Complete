@@ -1,7 +1,7 @@
-package it.sisal.json.serialize;
+package com.example.demo.json.serialize;
 
 
-import it.sisal.AbstractJson;
+import com.example.demo.AbstractJson;
 import javassist.*;
 import javassist.bytecode.DuplicateMemberException;
 import org.apache.maven.plugin.MojoExecutionException;
@@ -24,7 +24,7 @@ public class Serialize extends AbstractJson {
 
     @Override
     public void execute() throws MojoExecutionException {
-        Set<Class> classes = findAllMatchingTypes(SisalSerializer.class);
+        Set<Class> classes = findAllMatchingTypes(Serializer.class);
 
         classes.forEach(c -> {
             try {

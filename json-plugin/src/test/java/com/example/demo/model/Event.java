@@ -1,6 +1,7 @@
-package it.sisal.model;
+package com.example.demo.model;
 
-import it.sisal.json.serialize.JsonSerializable;
+
+import com.example.demo.json.serialize.JsonSerializable;
 
 import java.util.List;
 

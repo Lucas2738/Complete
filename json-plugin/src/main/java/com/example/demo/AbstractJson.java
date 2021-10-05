@@ -1,4 +1,4 @@
-package it.sisal;
+package com.example.demo;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;

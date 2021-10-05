@@ -1,10 +1,10 @@
-package it.sisal.json.deserialize;
+package com.example.demo.json.deserialize;
 
+import com.example.demo.AbstractJson;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
-import it.sisal.AbstractJson;
 import it.sisal.exceptions.ParsingException;
 import javassist.*;
 import javassist.bytecode.DuplicateMemberException;
@@ -29,7 +29,7 @@ public class Deserialize extends AbstractJson {
 
     @Override
     public void execute() throws MojoExecutionException, MojoFailureException {
-        Set<Class> classes = findAllMatchingTypes(SisalDeserializer.class);
+        Set<Class> classes = findAllMatchingTypes(Deserializer.class);
 
         classes.forEach(c -> {
             try {

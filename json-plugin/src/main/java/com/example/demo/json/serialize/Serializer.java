@@ -1,4 +1,4 @@
-package it.sisal.json.serialize;
+package com.example.demo.json.serialize;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
  * */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
-public @interface SisalSerializer {
+public @interface Serializer {
 }

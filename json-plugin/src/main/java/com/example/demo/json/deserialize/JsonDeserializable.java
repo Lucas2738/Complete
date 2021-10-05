@@ -1,11 +1,10 @@
-package it.sisal.json.deserialize;
+package com.example.demo.json.deserialize;
 
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
-import it.sisal.json.serialize.SisalSerializer;
 
 /** Provide static methods that will be override in all subclass of this interface that are annotate with SisalDeserializer
- * @see SisalDeserializer
+ * @see Deserializer
  * */
 public abstract class JsonDeserializable {
 

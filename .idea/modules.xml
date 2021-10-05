@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/demo-client/demo-client.iml" filepath="$PROJECT_DIR$/demo-client/demo-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/json-plugin/json-plugin.iml" filepath="$PROJECT_DIR$/json-plugin/json-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/module.iml" filepath="$PROJECT_DIR$/module.iml" />
     </modules>
   </component>

@@ -1,4 +1,4 @@
-package it.sisal.json.deserialize;
+package com.example.demo.json.deserialize;
 
 /**Define the type of incoming timestamp that has to be deserialized
  * */
